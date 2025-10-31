@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results & Case Studies | Full Stack AI Automation</title>
+    <meta name="description" content="See how businesses like yours are transforming their operations with AI automation.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            color: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: var(--font-weight-black);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .case-study {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .case-study-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--color-gray-light);
+        }
+
+        .case-study-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--color-primary);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--color-white);
+            flex-shrink: 0;
+        }
+
+        .case-study-title h3 {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .case-study-meta {
+            color: var(--color-gray-dark);
+            font-size: 0.95rem;
+        }
+
+        .case-study-section {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .case-study-section h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-sm);
+            margin: var(--spacing-md) 0;
+        }
+
+        .metric-item {
+            background-color: var(--color-gray-light);
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--color-gray-dark);
+        }
+
+        .quote-box {
+            background-color: var(--color-gray-light);
+            border-left: 4px solid var(--color-primary);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            font-style: italic;
+            margin: var(--spacing-md) 0;
+        }
+
+        .quote-author {
+            font-style: normal;
+            font-weight: var(--font-weight-bold);
+            color: var(--color-black);
+            margin-top: var(--spacing-sm);
+        }
+
+        @media (max-width: 768px) {
+            .case-study-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-placeholder">
+                <div class="logo-icon">FS</div>
+                <span class="logo">Full Stack AI</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="analysis.html" class="btn btn-primary">Get My Free AI Analysis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Real <span class="hero-highlight">Results</span> from Real Businesses</h1>
+                <p>See how companies like yours are saving time, cutting costs, and growing faster with AI automation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGGREGATE STATS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Impact Across Our Clients</h2>
+                <p>Combined results from businesses we've helped transform</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Hours Saved Monthly</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$250K+</div>
+                    <div class="stat-label">Annual Cost Savings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Average Follow-Up Improvement</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Client Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDY 1 -->
+    <section class="section section-gray" id="case-study-1">
+        <div class="container">
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-icon">🏠</div>
+                    <div class="case-study-title">
+                        <h3>Johnson's Plumbing Services: 85% Increase in Lead Follow-Up</h3>
+                        <p class="case-study-meta">Service Industry • 12 Employees • Midwest Region</p>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h4>The Challenge</h4>
+                    <p>Johnson's Plumbing was drowning in leads but couldn't keep up with follow-ups. Inquiries came from multiple sources—phone calls, website forms, referrals—and many fell through the cracks. Owner Mike Johnson estimates they were losing 40% of potential customers simply because they didn't follow up fast enough.</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h4>The Solution</h4>
+                    <p>We implemented an AI-enabled CRM that automatically:</p>
+                    <ul>
+                        <li>Captured leads from all sources into one central system</li>
+                        <li>Sent instant acknowledgment texts to prospects</li>
+                        <li>Scheduled follow-up calls and emails based on lead temperature</li>
+                        <li>Tracked all customer interactions in one place</li>
+                        <li>Sent appointment reminders automatically</li>
+                    </ul>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-value">85%</div>
+                        <div class="metric-label">Follow-Up Rate Increase</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">3X</div>
+                        <div class="metric-label">More Conversions</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">15hrs</div>
+                        <div class="metric-label">Saved Per Week</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">$75K</div>
+                        <div class="metric-label">Additional Annual Revenue</div>
+                    </div>
+                </div>
+
+                <div class="quote-box">
+                    "Full Stack AI Automation transformed how we operate. We went from drowning in paperwork to having a streamlined system that runs itself. Our follow-up rate has never been higher, and we're closing deals we would have lost before."
+                    <p class="quote-author">— Mike Johnson, Owner</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h4>The Timeline</h4>
+                    <p><strong>Week 1-2:</strong> Discovery and system design<br>
+                    <strong>Week 3-4:</strong> Implementation and data migration<br>
+                    <strong>Week 5-6:</strong> Team training and optimization<br>
+                    <strong>Results visible:</strong> Within 30 days</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDY 2 -->
+    <section class="section" id="case-study-2">
+        <div class="container">
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-icon">🌳</div>
+                    <div class="case-study-title">
+                        <h3>GreenScape Landscaping: 20+ Hours Saved Per Week</h3>
+                        <p class="case-study-meta">Service Industry • 25 Employees • East Coast</p>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h4>The Challenge</h4>
+                    <p>GreenScape's operations manager, Sarah Chen, was spending 20+ hours per week on manual scheduling, invoicing, and administrative tasks. The company was growing, but operational inefficiency was eating into profits and preventing the team from taking on more clients.</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h4>The Solution</h4>
+                    <p>We built a comprehensive operations automation system that handled:</p>
+                    <ul>
+                        <li>Intelligent scheduling based on location, crew availability, and job requirements</li>
+                        <li>Automated customer notifications (appointment reminders, crew on the way, job complete)</li>
+                        <li>Digital invoicing sent immediately after job completion</li>
+                        <li>Online payment processing</li>
+                        <li>Inventory tracking and reorder alerts</li>
+                    </ul>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-value">22hrs</div>
+                        <div class="metric-label">Saved Per Week</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">50%</div>
+                        <div class="metric-label">Faster Scheduling</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">40%</div>
+                        <div class="metric-label">Faster Payment Collection</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">$45K</div>
+                        <div class="metric-label">Annual Cost Savings</div>
+                    </div>
+                </div>
+
+                <div class="quote-box">
+                    "I was skeptical about AI until I met this team. They took the time to understand our business and created a solution that actually works. We're saving 20+ hours a week on admin tasks alone. Now I can focus on growing the business instead of drowning in paperwork."
+                    <p class="quote-author">— Sarah Chen, Operations Manager</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h4>The Timeline</h4>
+                    <p><strong>Week 1-2:</strong> Workflow analysis and solution design<br>
+                    <strong>Week 3-5:</strong> System development and testing<br>
+                    <strong>Week 6:</strong> Team training and rollout<br>
+                    <strong>Results visible:</strong> Within 45 days</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDY 3 -->
+    <section class="section section-gray" id="case-study-3">
+        <div class="container">
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-icon">🏢</div>
+                    <div class="case-study-title">
+                        <h3>Martinez Roofing: $50K+ in Annual Savings</h3>
+                        <p class="case-study-meta">Construction Industry • 40 Employees • Southwest Region</p>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h4>The Challenge</h4>
+                    <p>Martinez Roofing & Construction was struggling with inefficient data management across multiple departments. Estimators were re-entering data from field notes, project managers were chasing down status updates, and invoicing was always delayed. CEO David Martinez knew AI could help but previous attempts had failed.</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h4>The Solution</h4>
+                    <p>We designed an integrated system that connected their entire operation:</p>
+                    <ul>
+                        <li>Mobile app for field technicians to capture job data in real-time</li>
+                        <li>Automated estimation and proposal generation</li>
+                        <li>Real-time project tracking and status updates</li>
+                        <li>Automated invoicing based on completed milestones</li>
+                        <li>Custom dashboard for CEO with key metrics and insights</li>
+                        <li>Document automation for contracts, change orders, and reports</li>
+                    </ul>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-value">$52K</div>
+                        <div class="metric-label">Annual Labor Savings</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">60%</div>
+                        <div class="metric-label">Faster Invoicing</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">99%</div>
+                        <div class="metric-label">Data Accuracy</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">30hrs</div>
+                        <div class="metric-label">Saved Weekly</div>
+                    </div>
+                </div>
+
+                <div class="quote-box">
+                    "Finally, an AI solution that delivers real ROI. The team at Full Stack AI didn't just sell us software—they became our partners in growth. Our efficiency has tripled, and we can finally see what's happening across all our projects in real-time. Best business investment we've made."
+                    <p class="quote-author">— David Martinez, CEO</p>
+                </div>
+
+                <div class="case-study-section">
+                    <h4>The Timeline</h4>
+                    <p><strong>Week 1-3:</strong> Comprehensive discovery across all departments<br>
+                    <strong>Week 4-8:</strong> Custom system development and integration<br>
+                    <strong>Week 9-10:</strong> Phased rollout and training<br>
+                    <strong>Results visible:</strong> Within 60 days</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>More Success Stories</h2>
+            </div>
+            <div class="cards-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"We tried implementing AI on our own and wasted months. Full Stack AI came in, understood our needs immediately, and delivered a solution that's saved us countless hours. Wish we'd found them sooner."</p>
+                    <p class="testimonial-author">James Wilson</p>
+                    <p class="testimonial-role">Owner, Wilson HVAC Services</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"The ROI was clear within the first month. Our customer response time went from hours to minutes, and we're handling twice the volume with the same team size."</p>
+                    <p class="testimonial-author">Rebecca Torres</p>
+                    <p class="testimonial-role">Director of Operations, Elite Home Services</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"What impressed me most was their patience and willingness to train our team. They didn't just build the system and leave—they made sure we could use it effectively."</p>
+                    <p class="testimonial-author">Tom Anderson</p>
+                    <p class="testimonial-role">CEO, Anderson Electrical</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section section-gray">
+        <div class="container text-center">
+            <h2>Ready to Write Your Success Story?</h2>
+            <p class="mb-2">Let's discuss how AI automation can transform your business.</p>
+            <a href="analysis.html" class="btn btn-primary">Get Your Free AI Analysis</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Full Stack AI Automation</h3>
+                    <p>Transforming businesses through intelligent automation and AI-enabled CRM strategy.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about.html">About</a></p>
+                    <p><a href="solutions.html">Solutions</a></p>
+                    <p><a href="results.html">Results</a></p>
+                </div>
+                <div>
+                    <h3>Get Started</h3>
+                    <p><a href="analysis.html">Free AI Analysis</a></p>
+                    <p><a href="process.html">Our Process</a></p>
+                    <p><a href="#">Contact</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Full Stack AI Automation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

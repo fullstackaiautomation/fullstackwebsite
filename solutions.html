@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Solutions | Full Stack AI Automation</title>
+    <meta name="description" content="Explore our AI automation solutions designed to eliminate monotonous work and amplify your team's productivity.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        .solution-detail {
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-xl);
+            border-bottom: 2px solid var(--color-gray-light);
+        }
+
+        .solution-detail:last-child {
+            border-bottom: none;
+        }
+
+        .solution-header {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: var(--spacing-md);
+            align-items: start;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .solution-icon-large {
+            width: 80px;
+            height: 80px;
+            background-color: var(--color-primary);
+            border-radius: var(--border-radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--color-white);
+        }
+
+        .solution-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-sm);
+            margin: var(--spacing-md) 0;
+        }
+
+        .benefit-item {
+            background-color: var(--color-gray-light);
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius);
+            border-left: 3px solid var(--color-primary);
+        }
+
+        .benefit-item strong {
+            color: var(--color-primary);
+        }
+
+        .use-cases {
+            background-color: var(--color-gray-light);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-lg);
+            margin: var(--spacing-md) 0;
+        }
+
+        .use-cases h4 {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .use-cases ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .use-cases li {
+            padding: var(--spacing-xs) 0;
+            padding-left: var(--spacing-md);
+            position: relative;
+        }
+
+        .use-cases li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: var(--font-weight-bold);
+        }
+
+        @media (max-width: 768px) {
+            .solution-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .solution-icon-large {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-placeholder">
+                <div class="logo-icon">FS</div>
+                <span class="logo">Full Stack AI</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="analysis.html" class="btn btn-primary">Get My Free AI Analysis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>AI Automation <span class="hero-highlight">Solutions</span></h1>
+                <p>Custom systems designed to eliminate monotonous work and amplify your team's productivity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTIONS OVERVIEW -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Transforming Business Operations</h2>
+                <p>Our solutions are built around one goal: freeing your team from repetitive tasks so they can focus on growth, creativity, and customer relationships.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION 1: CRM AUTOMATION -->
+    <section class="section" id="crm-automation">
+        <div class="container">
+            <div class="solution-detail">
+                <div class="solution-header">
+                    <div class="solution-icon-large">📊</div>
+                    <div>
+                        <h2>AI-Enabled CRM Automation</h2>
+                        <p>Never let a lead fall through the cracks again. Our intelligent CRM systems automatically capture, nurture, and convert leads while you focus on closing deals.</p>
+                    </div>
+                </div>
+
+                <div class="solution-benefits">
+                    <div class="benefit-item">
+                        <strong>85% Higher Follow-Up Rate</strong><br>
+                        Automated follow-up sequences ensure no prospect is forgotten
+                    </div>
+                    <div class="benefit-item">
+                        <strong>3X Faster Response Time</strong><br>
+                        Instant lead capture and qualification means you respond while interest is hot
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Real-Time Insights</strong><br>
+                        Know exactly where every prospect is in your pipeline
+                    </div>
+                </div>
+
+                <div class="use-cases">
+                    <h4>What This Looks Like:</h4>
+                    <ul>
+                        <li>Automatic lead capture from website, phone calls, and forms</li>
+                        <li>Intelligent lead scoring to prioritize your hottest prospects</li>
+                        <li>Personalized email and SMS follow-up sequences</li>
+                        <li>Automated appointment scheduling and reminders</li>
+                        <li>Pipeline tracking and forecasting dashboards</li>
+                        <li>Integration with your existing tools (email, calendar, phone system)</li>
+                    </ul>
+                </div>
+
+                <p><strong>Perfect for:</strong> Service companies looking to scale sales without hiring more staff, and corporations needing to streamline their sales process.</p>
+
+                <div class="mt-2">
+                    <a href="analysis.html" class="btn btn-primary">See How This Works for Your Business</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION 2: WORKFLOW AUTOMATION -->
+    <section class="section section-gray" id="workflow-automation">
+        <div class="container">
+            <div class="solution-detail">
+                <div class="solution-header">
+                    <div class="solution-icon-large">⚡</div>
+                    <div>
+                        <h2>Workflow Automation</h2>
+                        <p>Stop wasting hours on data entry, document generation, and repetitive admin tasks. Let AI handle the monotonous work while your team focuses on what humans do best.</p>
+                    </div>
+                </div>
+
+                <div class="solution-benefits">
+                    <div class="benefit-item">
+                        <strong>20+ Hours Saved Weekly</strong><br>
+                        Eliminate manual data entry and document processing
+                    </div>
+                    <div class="benefit-item">
+                        <strong>99% Accuracy Rate</strong><br>
+                        Reduce human error in repetitive tasks
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Instant Processing</strong><br>
+                        Tasks that took hours now happen in seconds
+                    </div>
+                </div>
+
+                <div class="use-cases">
+                    <h4>What This Looks Like:</h4>
+                    <ul>
+                        <li>Automated invoice generation and payment reminders</li>
+                        <li>Smart document processing (proposals, contracts, reports)</li>
+                        <li>Intelligent email sorting and response suggestions</li>
+                        <li>Automated data entry from forms, emails, and documents</li>
+                        <li>Workflow triggers (when X happens, automatically do Y)</li>
+                        <li>Integration between all your business tools</li>
+                    </ul>
+                </div>
+
+                <p><strong>Perfect for:</strong> Any business drowning in paperwork, data entry, or repetitive administrative tasks.</p>
+
+                <div class="mt-2">
+                    <a href="analysis.html" class="btn btn-primary">Discover Your Automation Opportunities</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION 3: CUSTOMER COMMUNICATION -->
+    <section class="section" id="customer-communication">
+        <div class="container">
+            <div class="solution-detail">
+                <div class="solution-header">
+                    <div class="solution-icon-large">💬</div>
+                    <div>
+                        <h2>Customer Communication Systems</h2>
+                        <p>Provide instant, 24/7 customer service without burning out your team. Intelligent chatbots and automated messaging keep customers engaged and informed.</p>
+                    </div>
+                </div>
+
+                <div class="solution-benefits">
+                    <div class="benefit-item">
+                        <strong>70% Faster Response Time</strong><br>
+                        Answer common questions instantly, any time of day
+                    </div>
+                    <div class="benefit-item">
+                        <strong>90% Customer Satisfaction</strong><br>
+                        Customers love getting instant, accurate answers
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Reduced Support Burden</strong><br>
+                        Free your team from answering the same questions repeatedly
+                    </div>
+                </div>
+
+                <div class="use-cases">
+                    <h4>What This Looks Like:</h4>
+                    <ul>
+                        <li>AI chatbot for website and social media inquiries</li>
+                        <li>Automated appointment confirmations and reminders</li>
+                        <li>Smart FAQ system that learns from customer questions</li>
+                        <li>Personalized email campaigns based on customer behavior</li>
+                        <li>SMS/text messaging automation for updates and follow-ups</li>
+                        <li>Review request automation (boost your online reputation)</li>
+                    </ul>
+                </div>
+
+                <p><strong>Perfect for:</strong> Service companies fielding constant inquiries, and businesses looking to improve customer experience without hiring more support staff.</p>
+
+                <div class="mt-2">
+                    <a href="analysis.html" class="btn btn-primary">Improve Your Customer Experience</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION 4: DATA ANALYTICS -->
+    <section class="section section-gray" id="data-analytics">
+        <div class="container">
+            <div class="solution-detail">
+                <div class="solution-header">
+                    <div class="solution-icon-large">📈</div>
+                    <div>
+                        <h2>AI-Powered Analytics & Insights</h2>
+                        <p>Stop guessing and start knowing. Turn your data into actionable insights with real-time dashboards and predictive analytics.</p>
+                    </div>
+                </div>
+
+                <div class="solution-benefits">
+                    <div class="benefit-item">
+                        <strong>Real-Time Visibility</strong><br>
+                        See exactly how your business is performing, right now
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Predictive Insights</strong><br>
+                        AI forecasts trends and alerts you to opportunities
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Smarter Decisions</strong><br>
+                        Data-driven insights eliminate guesswork
+                    </div>
+                </div>
+
+                <div class="use-cases">
+                    <h4>What This Looks Like:</h4>
+                    <ul>
+                        <li>Custom dashboards showing your most important metrics</li>
+                        <li>Automated report generation (daily, weekly, monthly)</li>
+                        <li>Predictive analytics for sales, cash flow, and demand</li>
+                        <li>Customer behavior analysis and segmentation</li>
+                        <li>Performance tracking for team members and campaigns</li>
+                        <li>Alerts and notifications for important changes or trends</li>
+                    </ul>
+                </div>
+
+                <p><strong>Perfect for:</strong> Data-driven leaders who want clear visibility into business performance and growth opportunities.</p>
+
+                <div class="mt-2">
+                    <a href="analysis.html" class="btn btn-primary">Unlock Your Business Insights</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION 5: OPERATIONS OPTIMIZATION -->
+    <section class="section" id="operations">
+        <div class="container">
+            <div class="solution-detail">
+                <div class="solution-header">
+                    <div class="solution-icon-large">🔧</div>
+                    <div>
+                        <h2>Operations Optimization</h2>
+                        <p>Purpose-built for service companies: plumbing, landscaping, roofing, and home improvement. Streamline everything from scheduling to invoicing.</p>
+                    </div>
+                </div>
+
+                <div class="solution-benefits">
+                    <div class="benefit-item">
+                        <strong>50% Faster Scheduling</strong><br>
+                        AI-powered scheduling optimizes routes and availability
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Reduced No-Shows</strong><br>
+                        Automated reminders keep appointments on track
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Faster Payment</strong><br>
+                        Digital invoicing and payment processing
+                    </div>
+                </div>
+
+                <div class="use-cases">
+                    <h4>What This Looks Like:</h4>
+                    <ul>
+                        <li>Smart scheduling that considers location, job type, and tech availability</li>
+                        <li>Automated customer notifications (on the way, job complete, etc.)</li>
+                        <li>Digital work orders and job documentation</li>
+                        <li>Instant invoicing and online payment options</li>
+                        <li>Inventory tracking and reorder alerts</li>
+                        <li>Mobile apps for field technicians</li>
+                    </ul>
+                </div>
+
+                <p><strong>Perfect for:</strong> Service companies ready to ditch the clipboard and run a modern, efficient operation.</p>
+
+                <div class="mt-2">
+                    <a href="analysis.html" class="btn btn-primary">Modernize Your Operations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION 6: CUSTOM SOLUTIONS -->
+    <section class="section section-gray" id="custom">
+        <div class="container">
+            <div class="solution-detail">
+                <div class="solution-header">
+                    <div class="solution-icon-large">🎨</div>
+                    <div>
+                        <h2>Custom AI Solutions</h2>
+                        <p>Your business is unique. Sometimes the solution you need doesn't exist yet—so we build it for you.</p>
+                    </div>
+                </div>
+
+                <p>Not every business fits neatly into a predefined category. That's why we offer fully custom AI automation solutions tailored specifically to your industry, workflow, and goals.</p>
+
+                <div class="use-cases">
+                    <h4>Our Custom Solution Process:</h4>
+                    <ul>
+                        <li>Deep discovery to understand your unique challenges</li>
+                        <li>Custom roadmap and technical architecture design</li>
+                        <li>Agile development with regular feedback and iterations</li>
+                        <li>Full training and documentation for your team</li>
+                        <li>Ongoing support and optimization</li>
+                    </ul>
+                </div>
+
+                <p><strong>Perfect for:</strong> Businesses with unique workflows, niche industries, or complex automation needs that require a bespoke solution.</p>
+
+                <div class="mt-2">
+                    <a href="analysis.html" class="btn btn-primary">Discuss Your Custom Needs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section">
+        <div class="container text-center">
+            <h2>Which Solution Is Right for You?</h2>
+            <p class="mb-2">Let's talk. We'll analyze your workflow and recommend the perfect automation strategy.</p>
+            <a href="analysis.html" class="btn btn-primary">Get Your Free AI Analysis</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Full Stack AI Automation</h3>
+                    <p>Transforming businesses through intelligent automation and AI-enabled CRM strategy.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about.html">About</a></p>
+                    <p><a href="solutions.html">Solutions</a></p>
+                    <p><a href="results.html">Results</a></p>
+                </div>
+                <div>
+                    <h3>Get Started</h3>
+                    <p><a href="analysis.html">Free AI Analysis</a></p>
+                    <p><a href="process.html">Our Process</a></p>
+                    <p><a href="#">Contact</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Full Stack AI Automation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

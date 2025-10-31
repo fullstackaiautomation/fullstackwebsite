@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Full Stack AI Automation</title>
+    <meta name="description" content="Learn about the team behind Full Stack AI Automation and our mission to help businesses thrive with AI.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .story-image-placeholder {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            border-radius: var(--border-radius-lg);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: 3rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .value-card {
+            background-color: var(--color-white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-lg);
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .value-card h3 {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-gray-medium), var(--color-gray-dark));
+            margin: 0 auto var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--color-white);
+        }
+
+        .team-name {
+            font-size: 1.5rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--color-black);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .team-role {
+            color: var(--color-primary);
+            font-weight: var(--font-weight-medium);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .team-bio {
+            color: var(--color-gray-dark);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .story-section {
+                grid-template-columns: 1fr;
+            }
+
+            .story-image-placeholder {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-placeholder">
+                <div class="logo-icon">FS</div>
+                <span class="logo">Full Stack AI</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="analysis.html" class="btn btn-primary">Get My Free AI Analysis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>We're <span class="hero-highlight">Real People</span> Building Real Solutions</h1>
+                <p>Not AI creating AI—a dedicated team of humans committed to transforming businesses through intelligent automation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="section">
+        <div class="container">
+            <div class="story-section">
+                <div>
+                    <h2>Our Story</h2>
+                    <p>Full Stack AI Automation was born from frustration. We watched countless businesses invest in AI tools that promised the world but delivered little. Why? Because the tools were generic, the implementation was rushed, and there was no human element guiding the process.</p>
+                    <p>We knew there had to be a better way. A way that puts <strong>people first</strong>, understands the unique challenges of each business, and delivers automation that actually works in the real world.</p>
+                    <p>So we built Full Stack AI Automation—a consulting firm where experienced professionals partner with businesses to design, implement, and optimize AI systems that deliver measurable results.</p>
+                </div>
+                <div class="story-image-placeholder">
+                    📊
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR MISSION -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Mission</h2>
+                <p>To empower businesses of all sizes to harness the power of AI automation—not by replacing humans, but by freeing them from monotonous work so they can focus on what truly matters: growth, creativity, and customer relationships.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR VALUES -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Values</h2>
+                <p>These principles guide everything we do.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>🤝 Human-Centered</h3>
+                    <p>Technology should serve people, not the other way around. We design solutions that enhance human capabilities and improve quality of life.</p>
+                </div>
+                <div class="value-card">
+                    <h3>📈 Results-Driven</h3>
+                    <p>We measure success by one thing: real, measurable impact on your business. If it doesn't deliver ROI, we don't recommend it.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🎯 Transparency</h3>
+                    <p>No hidden fees, no jargon, no surprises. We explain everything in plain language and keep you informed every step of the way.</p>
+                </div>
+                <div class="value-card">
+                    <h3>💡 Innovation</h3>
+                    <p>AI technology evolves rapidly, and so do we. We stay on the cutting edge so your business always has access to the best solutions.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🔒 Trust</h3>
+                    <p>Your data, your business, your trust—we protect it all. We treat your information with the highest level of security and confidentiality.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🚀 Partnership</h3>
+                    <p>We're not just vendors; we're your long-term partners in growth. Your success is our success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEET THE TEAM -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet the Team</h2>
+                <p>The people behind your automation success.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-photo">👤</div>
+                    <div class="team-name">Founder Name</div>
+                    <div class="team-role">Co-Founder & CEO</div>
+                    <p class="team-bio">With 10+ years in business automation and AI strategy, [Name] has helped hundreds of companies transform their operations through intelligent systems.</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">👤</div>
+                    <div class="team-name">Co-Founder Name</div>
+                    <div class="team-role">Co-Founder & CTO</div>
+                    <p class="team-bio">A software engineer and AI specialist, [Name] designs and builds custom automation solutions that seamlessly integrate with your existing workflows.</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-photo">👤</div>
+                    <div class="team-name">Team Member Name</div>
+                    <div class="team-role">Senior Automation Consultant</div>
+                    <p class="team-bio">[Name] specializes in service industry automation, helping plumbing, landscaping, and construction companies streamline their operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose <span class="text-primary">Full Stack AI</span>?</h2>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Proven Expertise</h3>
+                    <p>Years of experience in AI implementation across multiple industries. We know what works and what doesn't.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛠️</div>
+                    <h3>Custom Solutions</h3>
+                    <p>No cookie-cutter approaches. Every solution is tailored specifically to your business, your workflow, and your goals.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📞</div>
+                    <h3>Ongoing Support</h3>
+                    <p>We don't disappear after implementation. We provide continuous optimization and support to ensure lasting success.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💼</div>
+                    <h3>Industry-Specific Knowledge</h3>
+                    <p>Whether you're a service company or a large corporation, we understand the unique challenges of your industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section section-gray">
+        <div class="container text-center">
+            <h2>Ready to Transform Your Business?</h2>
+            <p class="mb-2">Let's talk about how AI automation can work for you.</p>
+            <a href="analysis.html" class="btn btn-primary">Schedule Your Free Discovery Meeting</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Full Stack AI Automation</h3>
+                    <p>Transforming businesses through intelligent automation and AI-enabled CRM strategy.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about.html">About</a></p>
+                    <p><a href="solutions.html">Solutions</a></p>
+                    <p><a href="results.html">Results</a></p>
+                </div>
+                <div>
+                    <h3>Get Started</h3>
+                    <p><a href="analysis.html">Free AI Analysis</a></p>
+                    <p><a href="process.html">Our Process</a></p>
+                    <p><a href="#">Contact</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Full Stack AI Automation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
