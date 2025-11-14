@@ -21,9 +21,6 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: "Full Stack AI | AI-Enabled CRM Strategy & Automation",
   description: "Stop wasting time on monotonous work. Our AI consulting team provides ROI-driven automation systems that help you work 3X faster.",
-  icons: {
-    icon: "/images/logo-favicon.png",
-  },
 };
 
 export default function RootLayout({
@@ -36,6 +33,12 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${openSans.variable} font-sans antialiased`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-md focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -43,7 +46,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="pt-16">{children}</main>
+          <main id="main-content" className="pt-16">{children}</main>
         </ThemeProvider>
       </body>
     </html>

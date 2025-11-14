@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { CTAButton } from "@/components/ui/cta-button";
 
 export default function Home() {
   return (
@@ -18,11 +19,9 @@ export default function Home() {
               systems that transform how your business operates.
             </p>
             <div className="flex justify-center">
-              <Link href="/analysis">
-                <Button size="lg" className="uppercase font-bold">
-                  GET MY FREE AI AUDIT
-                </Button>
-              </Link>
+              <CTAButton>
+                GET MY FREE AI AUDIT
+              </CTAButton>
             </div>
           </div>
         </div>
@@ -45,7 +44,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors">
-              <div className="text-4xl mb-4">👥</div>
+              <div className="text-4xl mb-4" role="img" aria-label="People">👥</div>
               <h3 className="mb-3">Human-Centered Approach</h3>
               <p className="text-muted-foreground">
                 Our consultants work directly with your team to understand your unique challenges
@@ -54,7 +53,7 @@ export default function Home() {
             </div>
 
             <div className="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors">
-              <div className="text-4xl mb-4">🎯</div>
+              <div className="text-4xl mb-4" role="img" aria-label="Target">🎯</div>
               <h3 className="mb-3">Results-Driven Strategy</h3>
               <p className="text-muted-foreground">
                 We don't sell you technology for technology's sake. Every automation we implement
@@ -63,7 +62,7 @@ export default function Home() {
             </div>
 
             <div className="bg-card p-6 rounded-lg border border-border hover:border-primary transition-colors">
-              <div className="text-4xl mb-4">🤝</div>
+              <div className="text-4xl mb-4" role="img" aria-label="Handshake">🤝</div>
               <h3 className="mb-3">Partnership, Not Just Service</h3>
               <p className="text-muted-foreground">
                 We become an extension of your team, providing ongoing support and optimization
@@ -90,36 +89,42 @@ export default function Home() {
             {[
               {
                 icon: "📊",
+                iconLabel: "Chart",
                 title: "AI-Enabled CRM Automation",
                 description: "Automatically capture leads, follow up with prospects, and manage your sales pipeline without lifting a finger. Increase follow-up rates by 85%.",
                 link: "/solutions#crm-automation"
               },
               {
                 icon: "⚡",
+                iconLabel: "Lightning bolt",
                 title: "Workflow Automation",
                 description: "Eliminate repetitive tasks like data entry, scheduling, and reporting. Save 20+ hours per week for your team to focus on high-value work.",
                 link: "/solutions#workflow-automation"
               },
               {
                 icon: "💬",
+                iconLabel: "Speech bubble",
                 title: "Customer Communication Systems",
                 description: "Intelligent chatbots and automated follow-up systems that keep customers engaged while reducing response time by 70%.",
                 link: "/solutions#customer-communication"
               },
               {
                 icon: "📈",
+                iconLabel: "Graph trending up",
                 title: "AI-Powered Analytics",
                 description: "Transform raw data into actionable insights. Get real-time dashboards and predictive analytics to make smarter business decisions.",
                 link: "/solutions#data-analytics"
               },
               {
                 icon: "🔧",
+                iconLabel: "Wrench",
                 title: "Operations Optimization",
                 description: "Streamline your entire operation from scheduling to invoicing. Perfect for service companies like plumbing, landscaping, and roofing.",
                 link: "/solutions#operations"
               },
               {
                 icon: "🎨",
+                iconLabel: "Artist palette",
                 title: "Custom AI Solutions",
                 description: "Every business is unique. We design and build custom automation systems tailored specifically to your industry and workflow.",
                 link: "/solutions#custom"
@@ -127,7 +132,7 @@ export default function Home() {
             ].map((solution, index) => (
               <Link key={index} href={solution.link}>
                 <div className="bg-card p-6 rounded-lg border border-border hover:border-primary transition-all cursor-pointer h-full">
-                  <div className="text-4xl mb-4">{solution.icon}</div>
+                  <div className="text-4xl mb-4" role="img" aria-label={solution.iconLabel}>{solution.icon}</div>
                   <h3 className="mb-3">{solution.title}</h3>
                   <p className="text-muted-foreground mb-4">{solution.description}</p>
                   <span className="text-primary font-medium">Learn More →</span>
@@ -154,18 +159,21 @@ export default function Home() {
             {[
               {
                 icon: "🏆",
+                iconLabel: "Trophy",
                 title: "85% Increase in Follow-Up Rate",
                 description: "A regional home improvement company automated their lead follow-up process, converting 3X more prospects into customers.",
                 link: "/results#case-study-1"
               },
               {
                 icon: "⏱️",
+                iconLabel: "Stopwatch",
                 title: "20+ Hours Saved Per Week",
                 description: "A plumbing service eliminated manual scheduling and invoicing, freeing up time for growth and customer service.",
                 link: "/results#case-study-2"
               },
               {
                 icon: "💰",
+                iconLabel: "Money bag",
                 title: "$50K+ Annual Savings",
                 description: "A corporate client reduced operational costs by automating data entry and report generation across departments.",
                 link: "/results#case-study-3"
@@ -173,7 +181,7 @@ export default function Home() {
             ].map((result, index) => (
               <Link key={index} href={result.link}>
                 <div className="bg-card p-6 rounded-lg border border-border hover:border-primary transition-all cursor-pointer h-full">
-                  <div className="text-4xl mb-4">{result.icon}</div>
+                  <div className="text-4xl mb-4" role="img" aria-label={result.iconLabel}>{result.icon}</div>
                   <h3 className="mb-3">{result.title}</h3>
                   <p className="text-muted-foreground mb-4">{result.description}</p>
                   <span className="text-primary font-medium">Read Case Study →</span>
@@ -280,11 +288,9 @@ export default function Home() {
             <p className="text-lg text-muted-foreground mb-8">
               Get your Free AI Audit and discover how much time and money you could be saving.
             </p>
-            <Link href="/analysis">
-              <Button size="lg" className="uppercase font-bold">
-                Schedule Your Discovery Meeting
-              </Button>
-            </Link>
+            <CTAButton>
+              Schedule Your Discovery Meeting
+            </CTAButton>
           </div>
         </div>
       </section>

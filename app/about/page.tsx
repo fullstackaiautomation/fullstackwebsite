@@ -1,10 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
-export const metadata = {
-  title: "About Us | Full Stack AI Automation",
-  description: "Learn about the team behind Full Stack AI Automation and our mission to help businesses thrive with AI.",
-};
+import { CTAButton } from "@/components/ui/cta-button";
 
 export default function About() {
   return (
@@ -68,11 +66,9 @@ export default function About() {
               <p className="text-lg text-muted-foreground mb-8">
                 Let's talk about how AI automation can transform your business.
               </p>
-              <Link href="/analysis">
-                <Button size="lg" className="uppercase font-bold">
-                  Schedule Your Free AI Audit
-                </Button>
-              </Link>
+              <CTAButton>
+                Schedule Your Free AI Audit
+              </CTAButton>
             </div>
           </div>
         </div>

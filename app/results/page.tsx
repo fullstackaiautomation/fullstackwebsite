@@ -1,10 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
-export const metadata = {
-  title: "Results & Case Studies | Full Stack AI Automation",
-  description: "See how businesses like yours are transforming their operations with AI automation.",
-};
+import { CTAButton } from "@/components/ui/cta-button";
 
 export default function Results() {
   return (
@@ -27,7 +25,7 @@ export default function Results() {
       <section id="case-study-1" className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-5xl mb-6">🏆</div>
+            <div className="text-5xl mb-6" role="img" aria-label="Trophy">🏆</div>
             <h2 className="mb-4">85% Increase in Follow-Up Rate</h2>
             <h3 className="text-primary mb-6">Regional Home Improvement Company</h3>
             <p className="text-lg text-muted-foreground mb-6">
@@ -57,7 +55,7 @@ export default function Results() {
       <section id="case-study-2" className="py-20 bg-section-alt">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-5xl mb-6">⏱️</div>
+            <div className="text-5xl mb-6" role="img" aria-label="Stopwatch">⏱️</div>
             <h2 className="mb-4">20+ Hours Saved Per Week</h2>
             <h3 className="text-primary mb-6">Johnson's Plumbing Services</h3>
             <p className="text-lg text-muted-foreground mb-6">
@@ -87,7 +85,7 @@ export default function Results() {
       <section id="case-study-3" className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-5xl mb-6">💰</div>
+            <div className="text-5xl mb-6" role="img" aria-label="Money bag">💰</div>
             <h2 className="mb-4">$50K+ Annual Savings</h2>
             <h3 className="text-primary mb-6">Corporate Client - Multi-Department Automation</h3>
             <p className="text-lg text-muted-foreground mb-6">
@@ -122,11 +120,9 @@ export default function Results() {
             <p className="text-lg text-muted-foreground mb-8">
               Schedule a free AI audit and discover how much time and money you could be saving.
             </p>
-            <Link href="/analysis">
-              <Button size="lg" className="uppercase font-bold">
-                GET MY FREE AI AUDIT
-              </Button>
-            </Link>
+            <CTAButton>
+              GET MY FREE AI AUDIT
+            </CTAButton>
           </div>
         </div>
       </section>

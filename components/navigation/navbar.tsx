@@ -5,7 +5,11 @@ import Image from "next/image";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
+import { CTAButton } from "@/components/ui/cta-button";
 import { useEffect, useState } from "react";
+// import { MobileNav } from "./mobile-nav"; // Option 1: Slide-Out Drawer
+import { MobileNavOption2 as MobileNav } from "./mobile-nav-option2"; // Option 2: Full-Screen Overlay
+// import { MobileNavOption3 as MobileNav } from "./mobile-nav-option3"; // Option 3: Slide-Down Accordion
 
 export function Navbar() {
   const { theme, setTheme } = useTheme();
@@ -17,16 +21,16 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-3 sm:px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity">
             <Image
               src="/images/logo-icon.png"
               alt="Full Stack AI Icon"
               width={40}
               height={40}
-              className="w-auto h-10"
+              className="w-auto h-8 sm:h-10"
             />
             {/* Type logo changes based on theme */}
             {mounted && (
@@ -35,13 +39,13 @@ export function Navbar() {
                 alt="Full Stack AI"
                 width={120}
                 height={32}
-                className="w-auto h-8"
+                className="w-auto h-6 sm:h-8"
                 priority
               />
             )}
           </Link>
 
-          {/* Navigation Links */}
+          {/* Desktop Navigation Links */}
           <ul className="hidden md:flex items-center gap-6">
             <li>
               <Link
@@ -84,29 +88,37 @@ export function Navbar() {
               </Link>
             </li>
             <li>
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="w-10 h-10 rounded-full border-2 border-muted-foreground flex items-center justify-center hover:border-primary transition-colors"
-                aria-label="Toggle theme"
+              <Link
+                href="/roi-calculator"
+                className="text-foreground hover:text-primary transition-colors font-medium"
               >
-                {theme === "dark" ? (
-                  <Sun className="h-5 w-5" />
-                ) : (
-                  <Moon className="h-5 w-5" />
-                )}
-              </button>
-            </li>
-            <li>
-              <Link href="/analysis">
-                <Button
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold uppercase"
-                  size="lg"
-                >
-                  GET MY FREE AI AUDIT
-                </Button>
+                ROI Calculator
               </Link>
             </li>
+            {mounted && (
+              <li>
+                <button
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="w-10 h-10 rounded-full border-2 border-muted-foreground flex items-center justify-center hover:border-primary transition-colors"
+                  aria-label="Toggle theme"
+                >
+                  {theme === "dark" ? (
+                    <Sun className="h-5 w-5" />
+                  ) : (
+                    <Moon className="h-5 w-5" />
+                  )}
+                </button>
+              </li>
+            )}
+            <li>
+              <CTAButton>
+                GET MY FREE AI AUDIT
+              </CTAButton>
+            </li>
           </ul>
+
+          {/* Mobile Navigation */}
+          <MobileNav />
         </div>
       </div>
     </nav>

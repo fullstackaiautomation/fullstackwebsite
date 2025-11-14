@@ -1,10 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
-export const metadata = {
-  title: "Our Process | Full Stack AI Automation",
-  description: "From discovery to deployment, here's how we transform your business with AI automation.",
-};
+import { CTAButton } from "@/components/ui/cta-button";
 
 export default function Process() {
   return (
@@ -79,8 +77,8 @@ export default function Process() {
         >
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <div className="flex items-start gap-6">
-                <div className="text-5xl font-bold text-primary min-w-[60px]">{step.number}</div>
+              <div className="flex items-start gap-4 sm:gap-6 md:gap-8">
+                <div className="text-4xl sm:text-5xl font-bold text-primary flex-shrink-0">{step.number}</div>
                 <div className="flex-1">
                   <h2 className="mb-4">{step.title}</h2>
                   <p className="text-lg text-muted-foreground mb-6">{step.description}</p>
@@ -88,7 +86,7 @@ export default function Process() {
                   <ul className="space-y-2">
                     {step.details.map((detail, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-secondary text-xl">✓</span>
+                        <span className="text-secondary text-xl" role="img" aria-label="Checkmark">✓</span>
                         <span className="text-muted-foreground">{detail}</span>
                       </li>
                     ))}
@@ -157,7 +155,7 @@ export default function Process() {
                   <ul className="space-y-2">
                     {tier.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-secondary">✓</span>
+                        <span className="text-secondary" role="img" aria-label="Checkmark">✓</span>
                         <span className="text-sm text-muted-foreground">{feature}</span>
                       </li>
                     ))}
@@ -177,11 +175,9 @@ export default function Process() {
             <p className="text-lg text-muted-foreground mb-8">
               Schedule your free AI audit and let's map out your path to automation.
             </p>
-            <Link href="/analysis">
-              <Button size="lg" className="uppercase font-bold">
-                Schedule Your Free AI Audit
-              </Button>
-            </Link>
+            <CTAButton>
+              Schedule Your Free AI Audit
+            </CTAButton>
           </div>
         </div>
       </section>

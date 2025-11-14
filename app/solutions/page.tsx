@@ -1,16 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
-export const metadata = {
-  title: "Our Solutions | Full Stack AI Automation",
-  description: "Explore our AI automation solutions designed to eliminate monotonous work and amplify your team's productivity.",
-};
+import { CTAButton } from "@/components/ui/cta-button";
 
 export default function Solutions() {
   const solutions = [
     {
       id: "crm-automation",
       icon: "📊",
+      iconLabel: "Chart",
       title: "AI-Enabled CRM Automation",
       description: "Stop losing leads in spreadsheets and email chains. Our AI-enabled CRM systems automatically capture every lead, follow up at the perfect time, and keep your pipeline organized—so you never miss an opportunity.",
       benefits: [
@@ -23,6 +22,7 @@ export default function Solutions() {
     {
       id: "workflow-automation",
       icon: "⚡",
+      iconLabel: "Lightning bolt",
       title: "Workflow Automation",
       description: "Your team shouldn't be spending hours on data entry, scheduling, and administrative tasks. We build custom workflow automation that handles the repetitive work, so your people can focus on growing your business.",
       benefits: [
@@ -35,6 +35,7 @@ export default function Solutions() {
     {
       id: "customer-communication",
       icon: "💬",
+      iconLabel: "Speech bubble",
       title: "Customer Communication Systems",
       description: "Never let a customer inquiry go unanswered. Our AI-powered communication systems handle customer questions 24/7, send timely follow-ups, and keep your customers engaged without requiring your team to work around the clock.",
       benefits: [
@@ -47,6 +48,7 @@ export default function Solutions() {
     {
       id: "data-analytics",
       icon: "📈",
+      iconLabel: "Graph trending up",
       title: "AI-Powered Analytics",
       description: "Stop guessing and start knowing. Our AI-powered analytics transform your raw business data into clear, actionable insights. Get real-time dashboards, predictive analytics, and automated reports that help you make smarter decisions faster.",
       benefits: [
@@ -59,6 +61,7 @@ export default function Solutions() {
     {
       id: "operations",
       icon: "🔧",
+      iconLabel: "Wrench",
       title: "Operations Optimization",
       description: "Built specifically for service companies like plumbing, landscaping, and roofing, our operations optimization systems streamline everything from job scheduling to invoicing. Spend less time on paperwork and more time serving customers.",
       benefits: [
@@ -71,6 +74,7 @@ export default function Solutions() {
     {
       id: "custom",
       icon: "🎨",
+      iconLabel: "Artist palette",
       title: "Custom AI Solutions",
       description: "No two businesses are exactly alike. If you have a unique workflow or industry-specific challenge, we'll design and build a custom AI solution tailored specifically to your needs. Our team has experience across dozens of industries.",
       benefits: [
@@ -94,11 +98,9 @@ export default function Solutions() {
             <p className="text-lg md:text-xl text-muted-foreground mb-8">
               Customized automation systems designed to eliminate monotonous work and amplify your team's productivity.
             </p>
-            <Link href="/analysis">
-              <Button size="lg" className="uppercase font-bold">
-                GET MY FREE AI AUDIT
-              </Button>
-            </Link>
+            <CTAButton>
+              GET MY FREE AI AUDIT
+            </CTAButton>
           </div>
         </div>
       </section>
@@ -112,9 +114,9 @@ export default function Solutions() {
         >
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <div className="flex items-start gap-6 mb-6">
-                <div className="text-5xl">{solution.icon}</div>
-                <div>
+              <div className="flex items-start gap-4 sm:gap-6 md:gap-8 mb-6">
+                <div className="text-4xl sm:text-5xl flex-shrink-0" role="img" aria-label={solution.iconLabel}>{solution.icon}</div>
+                <div className="flex-1">
                   <h2 className="mb-4">{solution.title}</h2>
                   <p className="text-lg text-muted-foreground mb-6">{solution.description}</p>
 
@@ -122,7 +124,7 @@ export default function Solutions() {
                   <ul className="space-y-2">
                     {solution.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <span className="text-secondary text-xl">✓</span>
+                        <span className="text-secondary text-xl" role="img" aria-label="Checkmark">✓</span>
                         <span className="text-muted-foreground">{benefit}</span>
                       </li>
                     ))}
@@ -142,11 +144,9 @@ export default function Solutions() {
             <p className="text-lg text-muted-foreground mb-8">
               Schedule a free AI audit and we'll show you exactly how these solutions can transform your operations.
             </p>
-            <Link href="/analysis">
-              <Button size="lg" className="uppercase font-bold">
-                Schedule Your Free AI Audit
-              </Button>
-            </Link>
+            <CTAButton>
+              Schedule Your Free AI Audit
+            </CTAButton>
           </div>
         </div>
       </section>
