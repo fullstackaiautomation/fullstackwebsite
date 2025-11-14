@@ -2,8 +2,10 @@
 
 **Project Name**: Full Stack AI Automation Website
 **Project Type**: Business Website & Lead Generation Platform
-**Status**: Production Ready (v1.6.0)
+**Status**: Production Ready (v1.6.0) - Deployed to GitHub
+**Repository**: https://github.com/fullstackaiautomation/fullstackwebsite
 **Last Updated**: November 14, 2025
+**Last Deployment**: November 14, 2025 - Commit fcfd446
 
 ---
 
@@ -424,6 +426,28 @@ None required for basic deployment. All configuration is in code.
 - Environment variables UI
 
 **Alternative**: Netlify, AWS Amplify, Railway, Render
+
+### Current Deployment Status
+**Repository**: https://github.com/fullstackaiautomation/fullstackwebsite
+**Branch**: main
+**Latest Commit**: fcfd446 (November 14, 2025)
+**Deployment Platform**: Ready for Vercel deployment
+
+**To Deploy to Vercel**:
+1. Go to https://vercel.com/new
+2. Import the GitHub repository: `fullstackaiautomation/fullstackwebsite`
+3. Select "main" branch
+4. Framework preset: Next.js (auto-detected)
+5. Build command: `npm run build` (default)
+6. Output directory: `.next` (default)
+7. Click "Deploy"
+
+Vercel will automatically:
+- Build and deploy on every push to main
+- Provide a production URL (e.g., fullstackwebsite.vercel.app)
+- Generate preview URLs for pull requests
+- Handle HTTPS/SSL automatically
+- Deploy globally via CDN
 
 ### Build Command
 ```bash
