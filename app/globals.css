@@ -169,3 +169,25 @@
     outline-offset: 0px;
   }
 }
+
+@layer utilities {
+  /* Gradient backgrounds for all screen sizes */
+
+  /* Light mode: Teal to White gradient */
+  .bg-section-alt {
+    background: linear-gradient(
+      30deg,
+      oklch(1 0 0) 0%,
+      oklch(0.63 0.13 180 / 0.67) 100%
+    );
+  }
+
+  /* Dark mode: Teal to Black gradient */
+  .dark .bg-section-alt {
+    background: linear-gradient(
+      30deg,
+      oklch(0.04 0 0) 0%,
+      oklch(0.63 0.13 180 / 0.83) 100%
+    );
+  }
+}

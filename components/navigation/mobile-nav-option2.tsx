@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
@@ -11,14 +11,19 @@ export function MobileNavOption2() {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
+  const [solutionsExpanded, setSolutionsExpanded] = useState(false);
 
   const navLinks = [
     { href: "/", label: "HOME" },
-    { href: "/solutions", label: "SOLUTIONS" },
-    { href: "/results", label: "RESULTS" },
+    {
+      label: "SOLUTIONS",
+      submenu: [
+        { href: "/solutions", label: "OVERVIEW" },
+        { href: "/results", label: "CASE STUDIES" }
+      ]
+    },
     { href: "/about", label: "ABOUT" },
-    { href: "/process", label: "PROCESS" },
-    { href: "/roi-calculator", label: "ROI CALCULATOR" },
+    { href: "/process", label: "PRICING & PROCESS" },
   ];
 
   const handleLinkClick = () => {
@@ -103,7 +108,7 @@ export function MobileNavOption2() {
                 <ul className="space-y-8 text-center">
                   {navLinks.map((link, index) => (
                     <li
-                      key={link.href}
+                      key={link.href || link.label}
                       style={{
                         animation: `slideUp 0.3s ease-out ${
                           0.1 + index * 0.05
@@ -111,13 +116,40 @@ export function MobileNavOption2() {
                         opacity: 0,
                       }}
                     >
-                      <Link
-                        href={link.href}
-                        onClick={handleLinkClick}
-                        className="text-2xl sm:text-3xl font-bold text-foreground hover:text-primary transition-colors block py-2"
-                      >
-                        {link.label}
-                      </Link>
+                      {link.submenu ? (
+                        <div>
+                          <button
+                            onClick={() => setSolutionsExpanded(!solutionsExpanded)}
+                            className="text-2xl sm:text-3xl font-bold text-foreground hover:text-primary transition-colors block py-2 mx-auto flex items-center gap-2"
+                          >
+                            {link.label}
+                            <ChevronDown className={`h-5 w-5 transition-transform ${solutionsExpanded ? 'rotate-180' : ''}`} />
+                          </button>
+                          {solutionsExpanded && (
+                            <ul className="mt-4 space-y-3">
+                              {link.submenu.map((sublink) => (
+                                <li key={sublink.href}>
+                                  <Link
+                                    href={sublink.href}
+                                    onClick={handleLinkClick}
+                                    className="text-lg sm:text-xl text-muted-foreground hover:text-primary transition-colors block py-1"
+                                  >
+                                    {sublink.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          onClick={handleLinkClick}
+                          className="text-2xl sm:text-3xl font-bold text-foreground hover:text-primary transition-colors block py-2"
+                        >
+                          {link.label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -144,10 +176,10 @@ export function MobileNavOption2() {
                 </Button>
               </div>
 
-              {/* Theme Toggle */}
+              {/* Theme Toggle - Moved below CTA */}
               {mounted && (
                 <div
-                  className="mt-6 flex items-center gap-3"
+                  className="mt-8 flex items-center gap-3"
                   style={{
                     animation: "slideUp 0.3s ease-out 0.45s forwards",
                     opacity: 0,

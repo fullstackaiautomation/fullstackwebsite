@@ -2,10 +2,12 @@
 
 **Project Name**: Full Stack AI Automation Website
 **Project Type**: Business Website & Lead Generation Platform
-**Status**: Production Ready (v1.6.0) - Deployed to GitHub
+**Status**: Live in Production + Active Development (v1.7.0)
 **Repository**: https://github.com/fullstackaiautomation/fullstackwebsite
-**Last Updated**: November 14, 2025
-**Last Deployment**: November 14, 2025 - Commit fcfd446
+**Live URL**: https://fullstackaiautomation.com
+**Last Updated**: November 17, 2025
+**Last Deployment**: November 14, 2025 - Commit b7ee04f (Vercel)
+**Current Dev Version**: v1.7.0 (ready for deployment from localhost)
 
 ---
 
@@ -48,13 +50,12 @@ A modern, fully-responsive business website for Full Stack AI Automation, built 
 ```
 fullstack-ai-nextjs/
 ├── app/                          # Next.js app directory
-│   ├── page.tsx                  # Home page
+│   ├── page.tsx                  # Home page (with integrated ROI calculator)
 │   ├── solutions/page.tsx        # Solutions overview
 │   ├── results/page.tsx          # Case studies
 │   ├── about/page.tsx            # About page
-│   ├── process/page.tsx          # Process & pricing
+│   ├── process/page.tsx          # Pricing & Process (renamed)
 │   ├── analysis/page.tsx         # Lead form (Google Forms integration)
-│   ├── roi-calculator/page.tsx   # Interactive ROI calculator
 │   ├── layout.tsx                # Root layout with theme provider
 │   └── globals.css               # Global styles & theme variables
 ├── components/
@@ -71,7 +72,17 @@ fullstack-ai-nextjs/
 │       ├── badge.tsx
 │       └── cta-button.tsx        # Custom CTA with press animation
 ├── public/
-│   └── logos/                    # Brand assets (light/dark variants)
+│   ├── images/                   # Brand assets (light/dark logos)
+│   └── icons/                    # SVG icons (NEW in v1.7.0)
+│       ├── 85%.svg
+│       ├── 20+.svg
+│       ├── $50K.svg
+│       ├── CRM.svg
+│       ├── WORKFLOW.svg
+│       ├── COMM.svg
+│       ├── ANALYTICS.svg
+│       ├── OP.svg
+│       └── CUSTOM.svg
 ├── tailwind.config.ts            # Tailwind configuration
 ├── tsconfig.json                 # TypeScript configuration
 └── package.json                  # Dependencies
@@ -108,185 +119,110 @@ fullstack-ai-nextjs/
 
 ---
 
-## Key Features
-
-### 1. Responsive Navigation
-- **Desktop**: Horizontal navbar with logo, navigation links, theme toggle, CTA button
-- **Mobile**: Hamburger menu → Full-screen overlay with staggered animations
-- **Theme Toggle**: Sun/moon icons, integrated in both desktop and mobile
-- **Hydration Safe**: Mounted state pattern prevents SSR/client mismatches
-
-### 2. Interactive ROI Calculator (`/roi-calculator`)
-**Purpose**: Lead generation tool showing potential value of AI automation
-
-**Inputs** (6 total):
-- Hours per week on repetitive tasks (slider: 1-60)
-- Average hourly rate (text input)
-- Number of employees affected (slider: 1-50)
-- Leads received per month (text input)
-- Current lead conversion rate % (slider: 1-50)
-- Average sale value (text input)
-
-**Calculations**:
-- Weekly time savings (70% automation efficiency)
-- Annual cost savings (time × rate × employees × 52)
-- Additional revenue (85% conversion improvement × sale value × 12)
-- Total annual value (savings + revenue)
-- ROI % ((value - investment) / investment × 100)
-- Payback period in months
-
-**Output Display**:
-- 4 beautiful cards showing key metrics
-- Large primary card with total value, ROI %, and payback
-- CTA to "Get Detailed Report" linking to `/analysis`
-- Disclaimer with methodology transparency
-
-### 3. Lead Capture Form (`/analysis`)
-**Integration**: Google Forms backend (no server required)
-
-**Features**:
-- Multi-step form on mobile (3 steps with progress dots)
-- Single-page view on desktop
-- Real-time field validation with error messages
-- ARIA live regions for screen reader announcements
-- Success state with checkmark animation
-- Hidden iframe submission to prevent redirect
-
-**Fields**:
-- First Name, Last Name (required)
-- Email, Phone (required, validated)
-- Company Name (required)
-- Industry (dropdown: Plumbing, Landscaping, Roofing, Construction, HVAC, Real Estate, Corporate/B2B, Other)
-- Company Size (optional dropdown)
-- Challenges (textarea, 500 char limit, required)
-
-### 4. Reusable CTA Button
-**File**: `components/ui/cta-button.tsx`
-
-**Features**:
-- 200ms press animation with color inversion
-- Light mode pressed: Black bg, teal text/border
-- Dark mode pressed: White bg, teal text/border
-- Hydration-safe with mounted state
-- Default href: `/analysis`
-- Customizable size and className props
-
-### 5. Theme System
-- **Provider**: next-themes with system preference detection
-- **Storage**: localStorage persistence
-- **Assets**: Separate logo files for light/dark modes
-- **Transitions**: Disabled to prevent flash
-- **Default**: Light mode
-
-### 6. Accessibility (WCAG 2.1 AA Compliant)
-- `lang="en"` attribute on HTML element
-- Skip to main content link (keyboard accessible)
-- Focus rings on all interactive elements (3px teal)
-- ARIA labels on all emoji icons (`role="img"`, `aria-label`)
-- Form error announcements with ARIA live regions
-- `aria-invalid` and `aria-describedby` on form fields
-- Semantic HTML structure throughout
-- Keyboard navigation support
-
----
-
-## Page Content Summary
-
-### Home (`/`)
-- Hero section with value proposition
-- "Why Choose Us" section (3 cards: Human-Centered, Results-Driven, Partnership)
-- Solutions overview (6 cards with links to `/solutions#anchor`)
-- Results preview (3 cards with links to `/results#case-study-N`)
-- Social proof section with statistics
-- Trust indicators (years experience, projects, satisfaction, response time)
-- Final CTA section
-
-### Solutions (`/solutions`)
-6 detailed solutions with alternating light/section-alt backgrounds:
-1. AI-Enabled CRM Automation
-2. Workflow Automation
-3. Customer Communication Systems
-4. AI-Powered Analytics
-5. Operations Optimization
-6. Custom AI Solutions
-
-Each includes:
-- Icon, title, description
-- "What You Get" benefit list with checkmarks
-- Link to schedule free AI audit
-
-### Results (`/results`)
-3 case studies with measurable outcomes:
-1. **85% Increase in Follow-Up Rate** - Regional Home Improvement Company
-2. **20+ Hours Saved Per Week** - Johnson's Plumbing Services
-3. **$50K+ Annual Savings** - Corporate Client Multi-Department Automation
-
-Each includes:
-- Challenge description
-- Solution implemented
-- Results with metrics
-- CTA to get started
-
-### About (`/about`)
-- "We're Humans Building AI Solutions" positioning
-- Our Story section
-- Our Mission section
-- Our Values (3 cards: Human-Centered, Results-Driven, Partnership)
-- CTA to schedule free AI audit
-
-### Process (`/process`)
-4-step process with timeline and deliverables:
-1. **Discovery Meeting (Week 1)** - Free AI Audit
-2. **Strategy & Planning (Week 2-3)** - Custom roadmap with ROI projections
-3. **Implementation (Week 4-8)** - Build, test, deploy with training
-4. **Optimization & Support (Ongoing)** - Monitoring and improvements
-
-**Pricing Tiers**:
-- **Starter**: $5K-$15K (single workflow)
-- **Professional**: $15K-$40K (multiple integrations) - MOST POPULAR
-- **Enterprise**: $40K+ (comprehensive transformation)
-
-### Analysis (`/analysis`)
-- Multi-step lead capture form
-- Benefits sidebar on desktop
-- Trust indicators on mobile
-- Google Forms integration
-- Success state with animation
-
-### ROI Calculator (`/roi-calculator`)
-- Interactive calculator with real-time updates
-- 6 user inputs (mix of sliders and text fields)
-- 4 results cards with key metrics
-- Disclaimer section
-- CTA to get detailed report
-
----
-
-## Development Commands
-
-```bash
-# Install dependencies
-npm install
-
-# Run development server (http://localhost:3000)
-npm run dev
-
-# Build for production
-npm run build
-
-# Run production build locally
-npm start
-
-# Type checking
-npx tsc --noEmit
-
-# Add shadcn component
-npx shadcn@latest add [component-name]
-```
-
----
-
 ## Version History
+
+### v1.7.0 (November 17, 2025) - IN PROGRESS
+**Major Updates**: Visual polish, UX improvements, navigation restructure
+
+**Completed Tasks**:
+- ✅ **Task 3a**: Emoji Replacement with SVG Icons
+  - Removed all emojis from Home page "Who We Are" section (3 removed)
+  - Removed all emojis from Home page "Solutions" section (6 removed)
+  - Replaced Results section emojis with teal SVG icons (3 replaced)
+  - Replaced all Solutions page icons with SVGs (6 replaced)
+  - Replaced all Results page case study icons with SVGs (3 replaced)
+  - Total: 21 emoji locations updated across site
+
+- ✅ **Task 3b**: Solution #1 CTA Strategy (Progressive Engagement)
+  - Solutions page: Removed hero CTA, added soft engagement button "See How We've Helped Others →"
+  - About page: Removed bottom CTA, added "Next Steps" navigation cards
+  - Process page: Removed bottom CTA, added soft conversion bridge with ROI Calculator + Results links
+  - Home page: Retained hero + bottom CTAs (high-intent locations)
+  - Results page: Retained bottom CTA
+  - ROI Calculator: Retained results card CTA
+  - Navbar: CTA button retained globally
+
+- ✅ **Task 3.2**: Process Page Restructure
+  - Renamed "Process" to "PRICING & PROCESS" in desktop and mobile navigation
+  - Page title updated to "Pricing & Process"
+  - Reversed page order: Pricing section now appears FIRST, Process timeline SECOND
+  - Updated Implementation timeline from "Week 4-8" to "Week 4-12"
+  - Added note: "Timeline varies based on project complexity"
+
+- ✅ **Task 3f**: Theme Toggle Position Changes
+  - Desktop: Moved theme toggle to RIGHT of "GET MY FREE AI AUDIT" button
+  - Mobile: Moved theme toggle BELOW the CTA button (with mt-8 spacing)
+  - Works consistently on both light and dark modes
+
+- ✅ **Task 3c**: Gradient Backgrounds (All Modes & Devices)
+  - Implemented teal gradient system for ALL screen sizes (desktop + mobile)
+  - Light mode: White → Teal gradient (30° angle, 67% opacity)
+  - Dark mode: Black → Teal gradient (30° angle, 83% opacity)
+  - Home page: Reordered sections (Hero gradient → alternating pattern)
+  - About page: Restructured into 3 sections (Header gradient → Story/Mission/Values solid → Next Steps gradient)
+  - Process page: Reordered sections (Header gradient → Investment Ranges solid → alternating pattern)
+  - Fixed icon filename issues (85%.svg → 85-percent.svg, $50K.svg → 50k.svg, 20+.svg → 20-plus.svg)
+  - All pages maintain consistent alternating gradient/solid pattern
+
+- ✅ **Task 3d**: Full ROI Calculator Integration on Home Page
+  - Moved COMPLETE ROI calculator from standalone page to home page
+  - All 6 input sliders: hours/week, hourly rate, employee count, leads/month, conversion rate, sale value
+  - All 4 output cards: Time Savings, Annual Cost Savings, Additional Revenue, Total Annual Value
+  - Layout: 4 cards in horizontal row (grid-cols-1 md:grid-cols-4), 6 sliders in container below
+  - Removed standalone `/roi-calculator` page (now redundant)
+  - Removed "ROI Calculator" from desktop and mobile navigation
+  - Fully optimized for mobile: responsive text sizing, touch-friendly controls, vertical card stacking
+  - Section positioned after Real Results, before Our Process (maintaining gradient alternation)
+
+- ✅ **Task 3e**: Solutions & Results Navigation Consolidation
+  - Consolidated "Solutions" and "Results" into single dropdown menu item
+  - Desktop: "Solutions" button with hover dropdown showing "Overview" and "Case Studies"
+  - Mobile: "SOLUTIONS" expandable item with "OVERVIEW" and "CASE STUDIES" sub-items
+  - Fixed dropdown hover behavior with pt-2 wrapper to prevent menu closing
+  - ChevronDown icon rotates 180° when dropdown is open
+  - Sub-items link to `/solutions` (Overview) and `/results` (Case Studies)
+
+**PHASE 2 COMPLETE** ✅
+**PHASE 3 COMPLETE** ✅
+
+- ✅ **Task 3g**: Simplified Contact/Lead Intake Form
+  - Reduced from 8+ fields to exactly 4 fields
+  - Full Name (required, validates for first + last name)
+  - Company Website (required, URL validation)
+  - Annual Revenue (slider with ranges: Under $100K → $5M+)
+  - "What are you hoping to automate?" (required, textarea)
+  - Removed multi-step wizard, benefits sidebar, excessive fields
+  - Maintained Google Forms integration and accessibility features
+  - Single-column clean layout (max-w-2xl)
+
+- ✅ **Task 2.1**: Google Calendar Booking Integration
+  - Added "BOOK NOW" button to confirmation page
+  - Direct link to Taylor's Google Calendar: https://calendar.app.google/Pi7jCpE4uXJVBPg69
+  - Updated success flow: Form submission → Confirmation → Book Now → Calendar selection
+  - New "What Happens Next?" steps:
+    1. Confirmation Email (meeting link sent)
+    2. Prepare for Your Call (think about needs and questions)
+    3. Your Free AI Audit (discuss opportunities and roadmap)
+  - Opens in new tab with noopener/noreferrer for security
+
+**PHASE 4 COMPLETE** ✅
+
+**Remaining Tasks**:
+- **PHASE 1** (remaining):
+  - Task 3h: Plan footer pages (FAQs, Blog, Library, Tools, Success Stories, Reviews)
+
+**Files Changed**:
+- `app/page.tsx` - Emoji removals, SVG replacements, gradient reordering, icon path fixes, FULL ROI calculator integration, section reordering
+- `app/solutions/page.tsx` - SVG icons, soft CTA replacement
+- `app/results/page.tsx` - SVG icons, icon path fixes
+- `app/about/page.tsx` - Next Steps cards, 3-section restructure with gradients
+- `app/process/page.tsx` - Complete restructure (pricing first, timeline updated), gradient reordering
+- `app/analysis/page.tsx` - **MAJOR REWRITE**: Simplified from 8+ fields to 4 fields, Google Calendar booking integration on success page
+- `app/globals.css` - Complete gradient system (light + dark mode, all screen sizes)
+- `components/navigation/navbar.tsx` - "Pricing & Process" label, theme toggle position, Solutions dropdown with hover behavior, ROI Calculator link removed
+- `components/navigation/mobile-nav-option2.tsx` - "PRICING & PROCESS" label, theme toggle position, Solutions expandable submenu, ROI Calculator link removed
+- `public/icons/` - 9 SVG icon files (renamed to remove special characters)
+- `app/roi-calculator/page.tsx` - **DELETED** (functionality moved to home page)
 
 ### v1.6.0 (November 14, 2025)
 - ✅ Task 3.1: Responsive Typography Refinement
@@ -336,163 +272,193 @@ npx shadcn@latest add [component-name]
 
 ---
 
-## Known Issues & Resolutions
+## Current Development Session (Nov 17, 2025)
 
-### Issue 1: Hydration Mismatches
-**Problem**: Theme-dependent content (logos, theme toggle) caused SSR/client mismatches
-**Solution**: Implemented mounted state pattern with `useEffect`
-**Status**: ✅ Resolved
+### Planning & Strategy
+**Approach**: Progressive implementation with localhost testing before deployment
 
-### Issue 2: Horizontal Scroll on Mobile
-**Problem**: Content extending beyond viewport width on 375px screens
-**Solution**: Added `overflow-x: hidden` to body in globals.css
-**Status**: ✅ Resolved
+**CTA Strategy Brainstorming** (3 solutions analyzed):
+1. **Solution #1 - Progressive Engagement** (SELECTED)
+   - Philosophy: Gentle touches early, stronger CTAs as users show intent
+   - Removes 33% of CTAs while maintaining strategic placement
+   - Focuses on user experience flow and trust-building
 
-### Issue 3: Section Background Contrast
-**Problem**: Light/dark backgrounds had insufficient contrast
-**Solution**: Increased contrast by 10-15% (light) and 45-50% (dark) in OKLCH values
-**Status**: ✅ Resolved
+2. Solution #2 - High-Intent Moments
+   - Philosophy: CTAs only at genuine decision moments
+   - Makes ROI Calculator the primary conversion engine
+   - Optimizes for qualified leads over volume
 
-### Issue 4: Build Errors with Tailwind v4
-**Problem**: Beta version caused build failures
-**Solution**: Locked to v4.0.0-beta.7, used `@import` syntax in globals.css
-**Status**: ✅ Resolved
+3. Solution #3 - Contextual Relevance
+   - Philosophy: Balanced "Goldilocks" approach
+   - Industry-appropriate for growth-stage B2B service provider
+
+**Execution Order** (optimized to avoid duplicate work):
+1. Emoji audit and documentation → CTA strategy selection
+2. Apply visual changes (emojis, icons) to ALL pages at once
+3. Implement CTA changes across all affected pages
+4. Process page restructure (navigation + content)
+5. Theme toggle positioning (desktop + mobile)
+6. Test on localhost before any deployment
+
+**Responsive Design Commitment**:
+- ALL changes must work perfectly on desktop AND mobile
+- Theme toggle repositioning applies to both light and dark modes
+- No change is considered complete until tested in both contexts
 
 ---
 
-## Design Decisions & Rationale
+## Page Content Summary (Updated for v1.7.0)
 
-### Why Next.js App Router?
-- Modern React patterns with Server Components
-- Built-in routing and layouts
-- Better SEO with SSR capabilities
-- Image optimization out of the box
-- TypeScript support
+### Home (`/`)
+- Hero section with value proposition + CTA (KEPT) - gradient background
+- "Real People Building Real Solutions" section (3 cards - emojis REMOVED) - solid background
+- "Our Solutions" section (6 cards - emojis REMOVED) - gradient background
+- "Real Results" section (3 cards with SVG ICONS: 85-percent.svg, 20-plus.svg, 50k.svg) - solid background
+- **ROI Calculator** section (NEW - full calculator integrated) - gradient background
+  - 4 output cards in horizontal row (Time Savings, Annual Cost Savings, Additional Revenue, Total Annual Value)
+  - 6 input sliders below (hours/week, hourly rate, employees, leads/month, conversion %, sale value)
+  - Fully mobile-optimized with responsive text and touch-friendly controls
+- "Our Process" section (4 steps) - solid background
+- "What Our Clients Say" testimonials section - gradient background
+- Final CTA section (KEPT) - solid background
 
-### Why Tailwind CSS v4?
-- Modern CSS features (OKLCH colors)
-- Smaller bundle size
-- Better developer experience
-- Native CSS cascade layers
-- Future-proof architecture
+### Solutions (`/solutions`)
+- Hero with soft engagement button: "See How We've Helped Others →" (NEW)
+- 6 detailed solutions with SVG icons (CRM, WORKFLOW, COMM, ANALYTICS, OP, CUSTOM)
+- Bottom CTA section (KEPT - maintains conversion opportunity)
 
-### Why Google Forms for Lead Capture?
-- No backend server required
-- Automatic email notifications
-- Spreadsheet integration
-- No database maintenance
-- Free and reliable
-- Easy to update fields
+### Results (`/results`)
+- 3 case studies with SVG icons (85%, 20+, $50K)
+- Bottom CTA (KEPT)
 
-### Why Full-Screen Mobile Menu?
-- Cleaner, more modern UX
-- Better for mobile touch targets
-- Accommodates theme toggle elegantly
-- Easier animations (staggered entrance)
-- More space for CTA
+### About (`/about`)
+- Our Story, Mission, Values
+- "Next Steps" cards replacing CTA (NEW):
+  - Explore Our Solutions
+  - See Client Results
+  - Understand Our Process
 
-### Why OKLCH Colors?
-- Perceptually uniform color space
-- Better for accessibility
-- Consistent lightness across hues
-- Future-proof (CSS Color Level 4)
-- More predictable color adjustments
+### Pricing & Process (`/process`) - RESTRUCTURED
+- Hero: "Pricing & Process" (UPDATED)
+- **PRICING FIRST**: Investment Ranges (Starter, Professional, Enterprise)
+- **PROCESS SECOND**: 4-step timeline
+  - Discovery (Week 1)
+  - Strategy & Planning (Week 2-3)
+  - Implementation (Week 4-12) - UPDATED timeline
+  - Optimization & Support (Ongoing)
+- Soft conversion bridge (NEW): ROI Calculator + Success Stories buttons
 
-### Why Fluid Typography with clamp()?
-- Single source of truth (no breakpoint duplication)
-- Smooth scaling across all viewport sizes
-- Better mobile readability
-- Maintains visual hierarchy on desktop
-- Less CSS to maintain
+### Analysis (`/analysis`)
+- Multi-step lead capture form
+- Benefits sidebar on desktop
+- Trust indicators on mobile
+- Google Forms integration
+- Success state with animation
+
+---
+
+## Navigation Updates (v1.7.0)
+
+**Desktop Navbar**:
+- Home | **Solutions** (dropdown: Overview, Case Studies) | About | **Pricing & Process** | CTA Button | Theme Toggle
+
+**Mobile Menu**:
+- HOME
+- **SOLUTIONS** (expandable: OVERVIEW, CASE STUDIES)
+- ABOUT
+- **PRICING & PROCESS**
+- GET MY FREE AI AUDIT (CTA button)
+- Theme toggle (below CTA)
+
+**Navigation Consolidation**:
+- Solutions and Results pages now accessible via "Solutions" dropdown
+- ROI Calculator removed from navigation (integrated into home page)
+- Cleaner, more focused navigation structure
+
+---
+
+## Known Issues & Fixes
+
+### Current Issues (Nov 17, 2025)
+None - all known issues resolved.
+
+### Resolved Issues
+- ✅ Emoji accessibility (replaced with SVG icons)
+- ✅ CTA button overuse (reduced by 33% with Solution #1)
+- ✅ Process page structure (reversed to Pricing first)
+- ✅ Theme toggle position (moved to right of CTA on desktop, below on mobile)
+- ✅ SVG icon filenames (removed special characters: 85-percent.svg, 20-plus.svg, 50k.svg)
+- ✅ Solutions dropdown hover behavior (pt-2 wrapper prevents menu closing)
+- ✅ ROI calculator placement (full calculator integrated on home page)
+- ✅ Mobile ROI calculator optimization (responsive text, touch-friendly controls, vertical card stacking)
+
+---
+
+## Design Decisions & Rationale (Updated)
+
+### Why Replace Emojis with SVG Icons?
+- **Consistency**: SVGs match brand colors (teal #00b495)
+- **Accessibility**: Better screen reader support than emoji
+- **Control**: Precise sizing and styling
+- **Professional**: More polished, business-appropriate look
+- **Performance**: Smaller file sizes, better caching
+
+### Why Solution #1 for CTA Strategy?
+- **User Experience**: Reduces pressure, builds trust
+- **Psychology**: Reciprocity principle, paradox of choice
+- **Progressive Engagement**: Matches typical B2B buyer journey (70% self-directed research)
+- **Quality Over Quantity**: Fewer, better-placed CTAs = higher conversion rates
+- **Brand Perception**: Confident, not desperate
+
+### Why Reverse Process Page Order?
+- **User Priority**: Visitors want pricing first ("How much?")
+- **Transparency**: Shows pricing upfront builds trust
+- **Logical Flow**: Price → Process makes more sense than Process → Price
+- **Industry Standard**: Most B2B service sites lead with pricing
+
+### Why Move Theme Toggle to Right of CTA?
+- **Visual Weight**: CTA button is primary action, should be centered
+- **Symmetry**: Better balanced navigation layout
+- **Accessibility**: Maintains keyboard tab order
+- **Consistency**: Matches typical UI patterns (settings/preferences at end)
+
+---
+
+## Development Commands
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server (http://localhost:3000)
+npm run dev
+
+# Build for production
+npm run build
+
+# Run production build locally
+npm start
+
+# Type checking
+npx tsc --noEmit
+
+# Add shadcn component
+npx shadcn@latest add [component-name]
+```
 
 ---
 
 ## Deployment Notes
 
-### Environment Variables
-None required for basic deployment. All configuration is in code.
-
-### Build Requirements
-- Node.js 18+ (uses React 19)
-- npm or yarn
-- 512MB RAM minimum for build
-
-### Deployment Platforms
-**Recommended**: Vercel (optimal for Next.js)
-- Zero config deployment
-- Automatic HTTPS
-- Global CDN
-- Preview deployments
-- Environment variables UI
-
-**Alternative**: Netlify, AWS Amplify, Railway, Render
-
 ### Current Deployment Status
 **Repository**: https://github.com/fullstackaiautomation/fullstackwebsite
 **Branch**: main
-**Latest Commit**: fcfd446 (November 14, 2025)
-**Deployment Platform**: Ready for Vercel deployment
+**Latest Commit**: b7ee04f (November 14, 2025)
+**Deployment Platform**: Vercel
+**Live URL**: https://fullstackaiautomation.com
+**Status**: ✅ Successfully Deployed (v1.6.0)
 
-**To Deploy to Vercel**:
-1. Go to https://vercel.com/new
-2. Import the GitHub repository: `fullstackaiautomation/fullstackwebsite`
-3. Select "main" branch
-4. Framework preset: Next.js (auto-detected)
-5. Build command: `npm run build` (default)
-6. Output directory: `.next` (default)
-7. Click "Deploy"
-
-Vercel will automatically:
-- Build and deploy on every push to main
-- Provide a production URL (e.g., fullstackwebsite.vercel.app)
-- Generate preview URLs for pull requests
-- Handle HTTPS/SSL automatically
-- Deploy globally via CDN
-
-### Build Command
-```bash
-npm run build
-```
-
-### Output
-- Static assets in `.next/static/`
-- Server functions in `.next/server/`
-- Optimized images in `.next/cache/images/`
-
-### Custom Domain Setup
-1. Add domain in hosting platform
-2. Update DNS records (usually automatic)
-3. SSL certificate auto-provisioned
-4. Force HTTPS in platform settings
-
----
-
-## Future Enhancements (Roadmap)
-
-### Phase 2: Enhanced Lead Generation
-- [ ] Email capture popup with exit intent
-- [ ] Chatbot integration (live chat or AI assistant)
-- [ ] Downloadable resources (whitepapers, case study PDFs)
-- [ ] Email drip campaign integration
-
-### Phase 3: Content & SEO
-- [ ] Blog/resources section with CMS
-- [ ] FAQ page with schema markup
-- [ ] Video testimonials
-- [ ] Advanced SEO optimization
-- [ ] Open Graph images for social sharing
-
-### Phase 4: Analytics & Tracking
-- [ ] Google Analytics 4 integration
-- [ ] Conversion tracking (form submissions, calculator usage)
-- [ ] Heat mapping (Hotjar or Clarity)
-- [ ] A/B testing framework
-
-### Phase 5: Advanced Features
-- [ ] Client portal/dashboard
-- [ ] Calendar integration for booking (Calendly)
-- [ ] Payment processing integration
-- [ ] Multi-language support (i18n)
+**Next Deployment**: v1.7.0 (pending localhost testing and approval)
 
 ---
 
@@ -504,50 +470,47 @@ npm run build
 - **Quarterly**: Performance audit with Lighthouse
 - **Annually**: Content refresh and case study updates
 
-### Security Updates
-- Monitor GitHub Dependabot alerts
-- Update dependencies monthly (test thoroughly)
-- Review Next.js security advisories
-
 ### Content Updates
-**To update copy**:
-1. Edit `.tsx` files directly in `app/` directory
-2. Test locally (`npm run dev`)
-3. Build and deploy (`npm run build`)
-
 **To update pricing**:
-- Edit `app/process/page.tsx` (lines 106-164)
+- Edit `app/process/page.tsx` (Pricing section now FIRST in file)
 
-**To update case studies**:
-- Edit `app/results/page.tsx`
+**To update process timeline**:
+- Edit `app/process/page.tsx` (Process steps array)
 
-**To update ROI calculator assumptions**:
-- Edit `app/roi-calculator/page.tsx` (lines 22-52)
-
-### Adding New Pages
-1. Create file in `app/` directory (e.g., `app/blog/page.tsx`)
-2. Add navigation link in `components/navigation/navbar.tsx`
-3. Add to mobile menu in `components/navigation/mobile-nav-option2.tsx`
-4. Update sitemap and robots.txt if needed
+**To update icons**:
+- Replace files in `public/icons/` directory
+- Ensure SVG files are optimized and use currentColor for theme compatibility
 
 ---
 
-## Contact & Support
+## Future Enhancements (Roadmap)
 
-**Project Owner**: Full Stack AI Automation
-**Developer**: Claude Code (Anthropic)
-**Framework**: Next.js 16.0.1
-**Status**: Production Ready ✅
+### Phase 2: Enhanced Lead Generation
+- [ ] Task 2.1: Google Calendar booking integration
+- [ ] Email capture popup with exit intent
+- [ ] Chatbot integration (live chat or AI assistant)
+- [ ] Downloadable resources (whitepapers, case study PDFs)
 
-For technical questions about this codebase:
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [shadcn/ui Documentation](https://ui.shadcn.com)
-- [React Documentation](https://react.dev)
+### Phase 3: Content & SEO
+- [ ] Task 3h: Footer pages (FAQs, Blog, Library, Tools, Success Stories, Reviews)
+- [ ] Video testimonials
+- [ ] Advanced SEO optimization
+- [ ] Open Graph images for social sharing
+
+### Phase 4: Visual Enhancements
+- [✅] Task 3c: Gradient backgrounds (ALL modes & devices - COMPLETED)
+- [✅] Task 3d: Full ROI calculator on home page (COMPLETED)
+- [✅] Task 3e: Menu consolidation (Solutions dropdown - COMPLETED)
+
+### Phase 5: Forms & UX
+- [ ] Task 3g: Simplified contact form (Full Name, Website, Revenue slider, Automation goals)
+- [ ] A/B testing framework
+- [ ] Analytics integration (GA4, heat mapping)
 
 ---
 
-**Last Updated**: November 14, 2025
+**Last Updated**: November 17, 2025
 **Build Status**: ✅ All type checks passing
 **Accessibility**: ✅ WCAG 2.1 AA Compliant
-**Version**: v1.6.0
+**Current Version**: v1.7.0 (ready for deployment)
+**Production Version**: v1.6.0 (will be v1.7.0 after deployment)

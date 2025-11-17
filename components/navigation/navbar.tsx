@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { CTAButton } from "@/components/ui/cta-button";
@@ -14,6 +14,7 @@ import { MobileNavOption2 as MobileNav } from "./mobile-nav-option2"; // Option 
 export function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [solutionsDropdownOpen, setSolutionsDropdownOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -55,21 +56,37 @@ export function Navbar() {
                 Home
               </Link>
             </li>
-            <li>
-              <Link
-                href="/solutions"
-                className="text-foreground hover:text-primary transition-colors font-medium"
+            <li
+              className="relative group"
+              onMouseEnter={() => setSolutionsDropdownOpen(true)}
+              onMouseLeave={() => setSolutionsDropdownOpen(false)}
+            >
+              <button
+                className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1"
+                aria-expanded={solutionsDropdownOpen}
+                aria-haspopup="true"
               >
                 Solutions
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/results"
-                className="text-foreground hover:text-primary transition-colors font-medium"
-              >
-                Results
-              </Link>
+                <ChevronDown className={`h-4 w-4 transition-transform ${solutionsDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {solutionsDropdownOpen && (
+                <div className="absolute top-full left-0 pt-2">
+                  <div className="w-48 bg-background border border-border rounded-lg shadow-lg py-2">
+                    <Link
+                      href="/solutions"
+                      className="block px-4 py-2 text-foreground hover:bg-accent hover:text-primary transition-colors"
+                    >
+                      Overview
+                    </Link>
+                    <Link
+                      href="/results"
+                      className="block px-4 py-2 text-foreground hover:bg-accent hover:text-primary transition-colors"
+                    >
+                      Case Studies
+                    </Link>
+                  </div>
+                </div>
+              )}
             </li>
             <li>
               <Link
@@ -84,16 +101,13 @@ export function Navbar() {
                 href="/process"
                 className="text-foreground hover:text-primary transition-colors font-medium"
               >
-                Process
+                Pricing & Process
               </Link>
             </li>
             <li>
-              <Link
-                href="/roi-calculator"
-                className="text-foreground hover:text-primary transition-colors font-medium"
-              >
-                ROI Calculator
-              </Link>
+              <CTAButton>
+                GET MY FREE AI AUDIT
+              </CTAButton>
             </li>
             {mounted && (
               <li>
@@ -110,11 +124,6 @@ export function Navbar() {
                 </button>
               </li>
             )}
-            <li>
-              <CTAButton>
-                GET MY FREE AI AUDIT
-              </CTAButton>
-            </li>
           </ul>
 
           {/* Mobile Navigation */}

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CTAButton } from "@/components/ui/cta-button";
+import Image from "next/image";
 
 export default function Results() {
   return (
@@ -25,7 +26,15 @@ export default function Results() {
       <section id="case-study-1" className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-5xl mb-6" role="img" aria-label="Trophy">🏆</div>
+            <div className="mb-6 w-20 h-20">
+              <Image
+                src="/icons/85-percent.svg"
+                alt="85% Increase"
+                width={80}
+                height={80}
+                className="w-full h-full object-contain"
+              />
+            </div>
             <h2 className="mb-4">85% Increase in Follow-Up Rate</h2>
             <h3 className="text-primary mb-6">Regional Home Improvement Company</h3>
             <p className="text-lg text-muted-foreground mb-6">
@@ -55,7 +64,15 @@ export default function Results() {
       <section id="case-study-2" className="py-20 bg-section-alt">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-5xl mb-6" role="img" aria-label="Stopwatch">⏱️</div>
+            <div className="mb-6 w-20 h-20">
+              <Image
+                src="/icons/20-plus.svg"
+                alt="20+ Hours"
+                width={80}
+                height={80}
+                className="w-full h-full object-contain"
+              />
+            </div>
             <h2 className="mb-4">20+ Hours Saved Per Week</h2>
             <h3 className="text-primary mb-6">Johnson's Plumbing Services</h3>
             <p className="text-lg text-muted-foreground mb-6">
@@ -85,7 +102,15 @@ export default function Results() {
       <section id="case-study-3" className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-5xl mb-6" role="img" aria-label="Money bag">💰</div>
+            <div className="mb-6 w-20 h-20">
+              <Image
+                src="/icons/50k.svg"
+                alt="$50K Savings"
+                width={80}
+                height={80}
+                className="w-full h-full object-contain"
+              />
+            </div>
             <h2 className="mb-4">$50K+ Annual Savings</h2>
             <h3 className="text-primary mb-6">Corporate Client - Multi-Department Automation</h3>
             <p className="text-lg text-muted-foreground mb-6">
