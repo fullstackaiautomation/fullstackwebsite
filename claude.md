@@ -747,10 +747,37 @@ Runs ESLint to check code quality
 
 ## Deployment Notes
 
+### ⚠️ URGENT: Repository Reconnection Required (Nov 17, 2025)
+
+**Current Situation**:
+v1.7.0 is ready for deployment but blocked due to Vercel repository mismatch.
+
+**Problem**:
+- Local git pushes to: `fullstackaiautomation/fullstackwebsite`
+- Vercel is connected to: `amandamealy/fullstackwebsite` (WRONG)
+- Latest commit (4370497) not visible to Vercel
+
+**Solution Steps**:
+1. Go to Vercel Dashboard → "Full Stack AI Automation Amanda" project
+2. Navigate to Settings → Git
+3. Click "Disconnect" next to `amandamealy/fullstackwebsite`
+4. Click "Connect" on `fullstackwebsite` repository OR switch account dropdown to `fullstackaiautomation`
+5. Select `fullstackaiautomation/fullstackwebsite` repository
+6. Verify connection shows correct repository
+7. Go to Deployments → Create Deployment
+8. Deploy commit: `4370497d8d69008032d4335455197502b8d12f97`
+9. Monitor deployment at https://fullstackaiautomation.com
+
+**Important Commit Details**:
+- **Commit Hash**: 4370497d8d69008032d4335455197502b8d12f97
+- **Version**: v1.7.0
+- **Message**: "Update contact/lead intake form with simplified fields and Google Calendar booking integration"
+- **Date**: November 17, 2025
+
 ### Build Verification
 ✅ **Type Check Status**: All files pass TypeScript compilation
 ✅ **Build Status**: Production build completes successfully
-✅ **Route Generation**: All 7 routes prerendered as static content
+✅ **Route Generation**: All 7 routes prerendered as static content (6 in v1.7.0 - ROI Calculator removed)
 
 ### Static Routes Generated
 ```

@@ -274,6 +274,44 @@ fullstack-ai-nextjs/
 
 ## Current Development Session (Nov 17, 2025)
 
+### DEPLOYMENT TROUBLESHOOTING (November 17, 2025 - Evening)
+
+#### Critical Issue: v1.7.0 Not Deploying to Production
+**Status**: ⚠️ REPOSITORY RECONNECTION IN PROGRESS
+
+**What We're Trying to Do**:
+Deploy v1.7.0 (simplified form + Google Calendar booking) to https://fullstackaiautomation.com
+
+**Root Cause Identified**:
+- Local repository pushes to: `fullstackaiautomation/fullstackwebsite`
+- Vercel is connected to: `amandamealy/fullstackwebsite` (WRONG)
+- Result: New commits aren't visible to Vercel for deployment
+
+**Deployment Attempts Made**:
+1. ✅ Git push succeeded to GitHub (commit 4370497d8d69008032d4335455197502b8d12f97)
+2. ❌ Vercel didn't auto-deploy (wrong repository)
+3. ❌ Manual deployment via Vercel UI failed ("GitHub could not find commit")
+4. ❌ Vercel CLI deployment created wrong project/URL
+5. 🔄 **IN PROGRESS**: Reconnecting Vercel to correct repository
+
+**Current Status - Where We Left Off**:
+- User navigated to Vercel → Project Settings → Git
+- Found "Disconnect" button next to `amandamealy/fullstackwebsite`
+- Ready to reconnect to `fullstackaiautomation/fullstackwebsite`
+- **NEXT STEP**: Click "Connect" on the correct repository OR switch GitHub account dropdown
+
+**Key Information**:
+- **Latest Commit**: 4370497d8d69008032d4335455197502b8d12f97
+- **Commit Message**: "Update contact/lead intake form with simplified fields and Google Calendar booking integration"
+- **Production Domain**: fullstackaiautomation.com
+- **Current Production Version**: v1.6.0 (November 14 deployment)
+- **Target Version**: v1.7.0 (from commit 4370497)
+
+**Files Changed in v1.7.0**:
+- `app/analysis/page.tsx` - MAJOR REWRITE (8+ fields → 4 fields, Google Calendar booking)
+- Form fields reduced to: Full Name, Company Website, Annual Revenue (slider), Automation Goals
+- Success page now includes "BOOK NOW" button → https://calendar.app.google/Pi7jCpE4uXJVBPg69
+
 ### Planning & Strategy
 **Approach**: Progressive implementation with localhost testing before deployment
 
@@ -453,12 +491,17 @@ npx shadcn@latest add [component-name]
 ### Current Deployment Status
 **Repository**: https://github.com/fullstackaiautomation/fullstackwebsite
 **Branch**: main
-**Latest Commit**: b7ee04f (November 14, 2025)
+**Latest Commit on GitHub**: 4370497 (November 17, 2025) - v1.7.0 ready
+**Latest Commit on Production**: b7ee04f (November 14, 2025) - v1.6.0
 **Deployment Platform**: Vercel
 **Live URL**: https://fullstackaiautomation.com
-**Status**: ✅ Successfully Deployed (v1.6.0)
+**Status**: ⚠️ **DEPLOYMENT BLOCKED** - Repository mismatch issue
 
-**Next Deployment**: v1.7.0 (pending localhost testing and approval)
+**Issue**: Vercel connected to wrong repository (`amandamealy/fullstackwebsite` instead of `fullstackaiautomation/fullstackwebsite`)
+
+**Resolution in Progress**: Reconnecting Vercel to correct repository via Project Settings → Git
+
+**Next Deployment**: v1.7.0 (commit 4370497) - pending repository reconnection
 
 ---
 
